@@ -1,14 +1,5 @@
-import { users } from "../users/get-Users";
 
-export const postLogin=()=>{
-  const checkedUser = users.filter((user)=>user.userName===userName && user.password===password);
-  console.log(checkedUser);
-  
-  if(checkedUser.length>0){
-    res.send("sucsess");
+export const postLogin = (req, res) => {
+    res.send("amjiltgui", users);
 
-  } else{
-    res.send("");
-
-  }
-}
+};

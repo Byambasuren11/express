@@ -1,6 +1,4 @@
-export var users = [
- 
-];
+
 import fs from 'fs';
 
 export const getUsers = (req, res) => {

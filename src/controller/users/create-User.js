@@ -1,15 +1,13 @@
-import { users } from "./get-Users.js";
-import fs from 'fs'
+import fs from "fs";
 
 export const postUsers = (req, res) => {
   const { userName, password } = req.body;
 
-   const rawUserData= fs.readFileSync('src/db/users.json');
-   const users=JSON.parse(rawUserData);
+  const rawUserData = fs.readFileSync("src/db/users.json");
+  const user = JSON.parse(rawUserData);
 
-   users.push({userName, password})
-   fs.writeFileSync('src/db/users.json', JSON.stringify(users));
+  user.push({ userName, password });
+  fs.writeFileSync("src/db/users.json", JSON.stringify(user));
 
- 
-  res.send(users)
+  res.send(user);
 };
